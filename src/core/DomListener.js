@@ -1,4 +1,4 @@
-import {capitalize} from './utilites'
+import {capitalize} from './utils.js'
 export class DomListener {
   constructor($root, listeners = []) {
     if (!$root) {
