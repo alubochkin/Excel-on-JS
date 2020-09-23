@@ -20,6 +20,10 @@ export class Formula extends ExcelComponent {
       const text = event.text()
       input.text(text)
     })
+    this.$on('table:click', (event) => {
+      const text = event.text()
+      input.text(text)
+    })
     this.$on('table:input', (event) => {
       const text = event.text()
       input.text(text)
@@ -47,7 +51,7 @@ export class Formula extends ExcelComponent {
   onInput(e) {
     this.$emit('formula:input', $(e.target).text())
   }
-  onClick() {
-    
+  onClick(e) {
+    this.$emit('formula:click', $(e.target).text())
   }
 }

@@ -12,7 +12,7 @@ export class Table extends ExcelComponent {
   constructor($root, options) {
     super($root, {
       name: 'Table',
-      listeners: ['mousedown', 'keydown', 'input'],
+      listeners: ['mousedown', 'keydown', 'input', 'click'],
       ...options
     })
 
@@ -61,6 +61,14 @@ export class Table extends ExcelComponent {
   
   onInput(event) {
     this.$emit('table:input', $(event.target))
+  }
+
+  onClick(event) {
+    
+    const id = this.selection.current.id(true)
+    const $next = this.$root.find(moveToCell(event.type, id))
+    this.selection.select($next)
+    this.$emit('table:click', $next)
   }
 
   onMousedown(event) {

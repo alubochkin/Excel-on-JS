@@ -109,6 +109,7 @@ export function $(selector) {
 
 $.create = (tagName, classes = '') => {
   const el = document.createElement(tagName)
+  console.log(el)
   if (classes) {
     el.classList.add(classes)
   }

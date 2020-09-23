@@ -4,6 +4,8 @@ export class TableSelection {
   constructor() {
     this.group = []
     this.current = null
+
+ 
   }
 
   // $el instanceof DOM === true
