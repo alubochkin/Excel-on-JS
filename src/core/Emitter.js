@@ -10,7 +10,7 @@ export class Emitter {
     }
     this.listeners[event].forEach(listener => {
       listener(...args)
-    });
+    })
   }
 
   subscribe(event, fn) {
@@ -21,7 +21,6 @@ export class Emitter {
       this.listeners[event] = 
         this.listeners[event].filter(listner => listner !== fn)
     }
-    
     
   }
 
